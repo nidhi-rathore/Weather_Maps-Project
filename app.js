@@ -6,7 +6,7 @@ const https = require("https");
 
 const app = express();
 app.use(express.urlencoded(
-    {extended: true}
+    {extended: true }
 ));
 
 
@@ -24,6 +24,7 @@ app.post("/", function(req, res){
 https.get(url, function(response){
     console.log(response.statusCode);
 
+    
     response.on("data", function(data){
         const weatherData = JSON.parse(data);
         const temp = weatherData.main.temp;
